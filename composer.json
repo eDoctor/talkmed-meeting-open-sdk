@@ -20,7 +20,7 @@
     "autoload": {
         "psr-4": {
             "eDoctor\\Meeting\\": "src/",
-            "eDoctor\\c\\": "tests/"
+            "eDoctor\\Tests\\": "tests/"
         }
     }
 }
