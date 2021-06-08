@@ -3,7 +3,7 @@
     "description": "talkMed meeting open api sdk",
     "require": {
         "php": ">=7.0",
-        "guzzlehttp/guzzle": "7.4.x-dev"
+        "guzzlehttp/guzzle": "~6.0"
     },
     "require-dev": {
         "php": ">=7.0",
@@ -17,7 +17,6 @@
             "email": "1197422754@qq.com"
         }
     ],
-    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "eDoctor\\Meeting\\": "src/",
