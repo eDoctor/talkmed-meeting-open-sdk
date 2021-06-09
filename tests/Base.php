@@ -23,13 +23,15 @@ class Base extends TestCase
 
     const IS_DEV = true; //设置当前 test 运行接口的环境
 
-    const APP_ID = 'tk5f59f156592bb908417117';
-    const APP_SECRET = '41476db4386bcd778856033a22e58cc3';
+    const APP_ID = 'xxxxx';
+    const APP_SECRET = 'xxxxxxxxxxxxxxx';
+
 
     const DEV_BASE_URI = 'https://devapimeeting.talkmed.com';
     const PRO_BASE_URI = 'https://apimeeting.talkmed.com';
 
     function getClient() :MeetingClient {
+
         $client  = new MeetingClient(self::APP_ID, self::APP_SECRET);
         $client->setApiBaseUri(self::getEnv());
         return $client;

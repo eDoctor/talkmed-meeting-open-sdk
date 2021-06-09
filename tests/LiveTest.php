@@ -8,6 +8,7 @@
 
 namespace eDoctor\Tests;
 
+use eDoctor\Meeting\MeetingClient;
 use eDoctor\Meeting\Models\Live\LiveAddSpeakerRequest;
 use eDoctor\Meeting\Models\Live\LiveCreateRequest;
 use eDoctor\Meeting\Models\Live\LiveDeleteRequest;
@@ -27,6 +28,17 @@ require_once 'Base.php';
  */
 class LiveTest extends Base
 {
+
+    public function testLiveRecordRequest() {
+
+        $client  = (new MeetingClient(self::APP_ID, self::APP_SECRET))->setApiBaseUri(self::getEnv());
+        $live = new LiveRecordRequest(1631372727);
+        $res = $client->request($live);
+
+        $this->assertEquals($res['code'],0);
+    }
+
+
 
 
     public function testLiveJoinRequest()
@@ -50,14 +62,6 @@ class LiveTest extends Base
     }
 
 
-
-    public function testLiveRecordRequest()
-    {
-        $live = new LiveRecordRequest(1631372727);
-        $res = $this->getClient()->request($live);
-        var_dump($res);
-        $this->assertEquals($res['code'],0);
-    }
 
 
 

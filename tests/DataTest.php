@@ -14,6 +14,10 @@ use eDoctor\Meeting\Models\Data\UserAllLogsRequest;
 use eDoctor\Meeting\Models\Data\UserJoinLogsRequest;
 use eDoctor\Meeting\Models\Data\UserLiveAllLogsRequest;
 use eDoctor\Meeting\Models\Data\UserLiveLogsByRtcTimeRequest;
+use eDoctor\Meeting\Models\Data\UserLiveRequest;
+use eDoctor\Meeting\Models\Data\UserVodJoinLogsRequest;
+use eDoctor\Meeting\Models\Data\VodReportRequest;
+use eDoctor\Meeting\Models\Data\WebSocketChatsRequest;
 
 require_once 'Base.php';
 
@@ -115,7 +119,7 @@ class DataTest extends Base
     }
 
 
-    public function test()
+    public function testUserLiveLogsByRtcTimeRequest()
     {
         $data = new UserLiveLogsByRtcTimeRequest(self::DATA_ROOM_ID);
         $res = $this->getClient()->request($data);
@@ -123,4 +127,38 @@ class DataTest extends Base
         $this->assertEquals($res['code'], 0);
     }
 
+
+    public function testUserLiveRequest()
+    {
+        $data = new UserLiveRequest(self::DATA_ROOM_ID);
+        $res = $this->getClient()->request($data);
+        print_r($res);
+        $this->assertEquals($res['code'], 0);
+    }
+
+    public function testUserVodJoinLogsRequest()
+    {
+        $data = new UserVodJoinLogsRequest(self::DATA_ROOM_ID);
+        $res = $this->getClient()->request($data);
+        print_r($res);
+        $this->assertEquals($res['code'], 0);
+    }
+
+
+    public function testVodReportRequest()
+    {
+        $data = new VodReportRequest(self::DATA_ROOM_ID);
+        $res = $this->getClient()->request($data);
+        print_r($res);
+        $this->assertEquals($res['code'], 0);
+    }
+
+
+    public function testWebSocketChatsRequest()
+    {
+        $data = new WebSocketChatsRequest(self::DATA_ROOM_ID);
+        $res = $this->getClient()->request($data);
+        print_r($res);
+        $this->assertEquals($res['code'], 0);
+    }
 }
