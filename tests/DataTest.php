@@ -15,6 +15,7 @@ use eDoctor\Meeting\Models\Data\UserJoinLogsRequest;
 use eDoctor\Meeting\Models\Data\UserLiveAllLogsRequest;
 use eDoctor\Meeting\Models\Data\UserLiveLogsByRtcTimeRequest;
 use eDoctor\Meeting\Models\Data\UserLiveRequest;
+use eDoctor\Meeting\Models\Data\UserLiveUniqueLogsByRtcTimeRequest;
 use eDoctor\Meeting\Models\Data\UserVodJoinLogsRequest;
 use eDoctor\Meeting\Models\Data\VodReportRequest;
 use eDoctor\Meeting\Models\Data\WebSocketChatsRequest;
@@ -157,6 +158,15 @@ class DataTest extends Base
     public function testWebSocketChatsRequest()
     {
         $data = new WebSocketChatsRequest(self::DATA_ROOM_ID);
+        $res = $this->getClient()->request($data);
+        print_r($res);
+        $this->assertEquals($res['code'], 0);
+    }
+
+
+    public function testUserLiveUniqueLogsByRtcTimeRequest()
+    {
+        $data = new UserLiveUniqueLogsByRtcTimeRequest(self::DATA_ROOM_ID);
         $res = $this->getClient()->request($data);
         print_r($res);
         $this->assertEquals($res['code'], 0);
