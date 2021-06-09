@@ -23,8 +23,8 @@ class Base extends TestCase
 
     const IS_DEV = true; //设置当前 test 运行接口的环境
 
-    const APP_ID = 'tk60bd8aefed173';
-    const APP_SECRET = '888794ca3931028a65ff3709a5cc0979';
+    const APP_ID = 'tk5f59f156592bb908417117';
+    const APP_SECRET = '41476db4386bcd778856033a22e58cc3';
 
     const DEV_BASE_URI = 'https://devapimeeting.talkmed.com';
     const PRO_BASE_URI = 'https://apimeeting.talkmed.com';

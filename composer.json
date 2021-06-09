@@ -1,5 +1,5 @@
 {
-    "name": "tlk/meeting",
+    "name": "edoctor/talkmed-meeting-open-sdk",
     "description": "talkMed meeting open api sdk",
     "require": {
         "php": ">=7.0",
