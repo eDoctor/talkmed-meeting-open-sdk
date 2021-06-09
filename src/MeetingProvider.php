@@ -32,7 +32,7 @@ class MeetingProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/config.php', 'meeting');
 
-        $this->app->singleton('eDoctor\Meeting', function ($app) {
+        $this->app->singleton('eDoctor\Meeting\MeetingClient', function ($app) {
             return (new MeetingClient($app->config->get('meeting.TlkAppId'), $app->config->get('meeting.TlkAppSecret')))
                 ->setApiBaseUri($app->config->get('meeting.TlkOpenApiBaseUri'));
         });
