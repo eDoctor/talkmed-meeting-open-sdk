@@ -5,7 +5,7 @@
 #### 安装
 
 ```
-composer require edoctor/meeting
+composer require talkmed/meeting
 ```
 
 #### 使用
@@ -23,9 +23,9 @@ setApiBaseUri()  设置环境域名
 setApiVersion()  设置请求接口的版本 可不设置  默认v1接口
 ```
 
-#### 请求(两种请求方式)
+#### 入参请求
 
-##### 第一种
+##### 第一种（推荐）
 
 ```
      $live = new LiveJoinRequest(2089596951);
@@ -45,10 +45,8 @@ setApiVersion()  设置请求接口的版本 可不设置  默认v1接口
        'room_role'     => 2,
        'room_password' => '023457'
      );
-     
      $live = new LiveJoinRequest(2089596951);
-     $live->setOptions(options);
-			
+     $live->setOptions(options);	
 		 //发起请求	
      $res = $client->request($user);
 ```
@@ -56,8 +54,8 @@ setApiVersion()  设置请求接口的版本 可不设置  默认v1接口
 说明:
 
 ```
- $user = new UserRegisterRequest(); 初始化uri
- 
- 
+ new LiveJoinRequest(2089596951);  // 2089596951 请求对象构造函数会初始化请求uri
 ```
+
+
 

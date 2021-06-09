@@ -7,8 +7,7 @@
  */
 
 return [
-    'TlkAppId'              => env('TLK_APP_ID', ''),
-    'TlkAppSecret'          => env('TLK_API_SECRET', ''),
-    'TlkOpenApi'            => env('TLK_API_SECRET', ''),
-    'TlkMeetingWebsiteHost' => env('TLK_MEETING_WEBSITE_HOST', ''),
+    'TlkAppId'             => env('TLK_APP_ID', ''),
+    'TlkAppSecret'         => env('TLK_API_SECRET', ''),
+    'TlkOpenApiBaseUri'    => env('TLK_OPEN_API_BASE_URI', ''),
 ];
