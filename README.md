@@ -89,7 +89,7 @@ setApiVersion()  设置请求接口的版本 可不设置  默认v1接口
  具体请求方法参照 wiki/Ide 提示
 ```
 
-#### 跳转地址示例
+#### 参会跳转地址示例
 
 ```
 use PHPUnit\Framework\TestCase;
@@ -99,7 +99,7 @@ class CommonTest extends TestCase {
 
     function testGetAuthorizeUrl(){
        $str = Tool::getAuthorizeUri('https://devmeeting.talkmed.com',self::APP_ID,self::APP_SECRET,'e96a4dba-4eb2-dd1d-7fa3-bdfcd36d98d7','1631372727','2','web','');
-  		 print_r($str);
+  	   print_r($str);
     }
  }   
  
