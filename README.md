@@ -88,3 +88,24 @@ setApiVersion()  设置请求接口的版本 可不设置  默认v1接口
  new LiveJoinRequest(2089596951);  //请求参数对象构造函数会初始化请求uri
  具体请求方法参照 wiki/Ide 提示
 ```
+
+#### 跳转地址示例
+
+```
+use PHPUnit\Framework\TestCase;
+use eDoctor\Meeting\Common\Tool;
+
+class CommonTest extends TestCase {
+
+    function testGetAuthorizeUrl(){
+       $str = Tool::getAuthorizeUri('https://devmeeting.talkmed.com',self::APP_ID,self::APP_SECRET,'e96a4dba-4eb2-dd1d-7fa3-bdfcd36d98d7','1631372727','2','web','');
+  		 print_r($str);
+    }
+ }   
+ 
+例子:
+https://devmeeting.talkmed.com/oauth/authorize?app_id=tk60bd8aefed173&auth_token=e96a4dba-4eb2-dd1d-7fa3-bdfcd36d98d7&timestamp=1623295227&signature=60bfde6b69b7d333892bf05586598235fea6cc96a323a076ea2f8d6a934337c8&platform=web&room_id=1631372727&role=2&channel=&password=
+```
+
+
+

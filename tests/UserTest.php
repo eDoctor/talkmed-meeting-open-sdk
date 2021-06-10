@@ -46,8 +46,8 @@ class UserTest extends Base
         $user = new UserRegisterRequest();
         $user->setIsLogin(0);
         $user->setType('unionid');
-        $user->setUnionId('huiafadewqad3ffead211232');
-        $user->setNickName('yzhui1993');
+        $user->setUnionId('huiafadewqad3ffead78dadyd12');
+        $user->setNickName('yuzihuitest');
         $user->setPlatform('open');
         $user->setPassword('123456');
         $user->setRoomRole(3);
@@ -62,10 +62,11 @@ class UserTest extends Base
     public function testUserLoginRequest() {
 
         $user = new UserLoginRequest();
-        $user->setEmail('yuzh1995@qq.com');
-        $user->setType('email');
+        $user->setUnionId('huiafadewqad3ffead78dadyd12');
+        $user->setType('unionid');
         $user->setPassword('123456');
         $user->setPlatform('open');
+        $user->setRoomId(1631372727);
 
         $client = $this->getClient();
         $res = $client->setApiBaseUri($this->getEnv())->request($user);

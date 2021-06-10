@@ -30,6 +30,7 @@ class Tool {
 
     /**
      * 获取meeting站点授权拼接参数
+     * @param string $host
      * @param string $appId
      * @param string $appSecret
      * @param string $autToken
@@ -40,11 +41,10 @@ class Tool {
      * @param string $channel
      * @return string
      */
-    public static function getAuthorizeUri(string $appId, string $appSecret, string $autToken, int $roomId, int $role, string $platform = 'web', string $password = '', $channel) :string
+    public static function getAuthorizeUri(string $host,string $appId, string $appSecret, string $autToken, int $roomId, int $role, string $platform = 'web', string $password = '', string $channel = '') :string
     {
         $time = time();
         $signature = hash('sha256', sprintf('%s-%s-%s-%s', $appId, $appSecret, $autToken, $time));
-
         $params = [
             'app_id'     => $appId,
             'auth_token' => $autToken,
@@ -56,7 +56,9 @@ class Tool {
             'channel'    => $channel ?? '',
             'password'   => $password
         ];
-        return http_build_query($params);
+
+        $urlParamsStr =  http_build_query($params);
+        return sprintf('%s/oauth/authorize?%s', $host, $urlParamsStr);
     }
 
 

@@ -15,6 +15,12 @@ use eDoctor\Meeting\Common\Tool;
 class CommonTest extends Base
 {
 
+    function testGetAuthorizeUri(){
+        $str =  Tool::getAuthorizeUri('https://devmeeting.talkmed.com',self::APP_ID,self::APP_SECRET,'e96a4dba-4eb2-dd1d-7fa3-bdfcd36d98d7','1631372727','2','web','');
+
+        var_dump($str);
+    }
+
     function testSignature() {
         $a =  Tool::getOpenApiSignature(self::APP_ID, self::APP_SECRET, 1622963549);
         var_dump($a);
@@ -32,4 +38,7 @@ class CommonTest extends Base
         var_dump(fopen($path.$filename, 'r'));
 
     }
+
+
+
 }
