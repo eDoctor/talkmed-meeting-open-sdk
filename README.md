@@ -42,7 +42,7 @@ class LiveTest extends TestCase
 #####  客户端
 
 ```
-$client  = new MeetingClient('app_id', 'app_secret')->setApiBaseUri('https://devapimeeting.talkmed.com');		
+$client  = (new MeetingClient('app_id', 'app_secret'))->setApiBaseUri('https://devapimeeting.talkmed.com');		
 
 ```
 
