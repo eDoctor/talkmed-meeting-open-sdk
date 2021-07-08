@@ -43,7 +43,7 @@ class SurveyQuestionAddRequest extends TlkRequest
     /**
      * @param mixed $title
      */
-    public function setTitle(string $title): void
+    public function setTitle(string $title)
     {
         $this->title = $title;
     }
@@ -54,7 +54,7 @@ class SurveyQuestionAddRequest extends TlkRequest
     /**
      * @param mixed $introduction
      */
-    public function setIntroduction(string $introduction): void
+    public function setIntroduction(string $introduction)
     {
         $this->introduction = $introduction;
     }
@@ -65,7 +65,7 @@ class SurveyQuestionAddRequest extends TlkRequest
     /**
      * @param mixed $is_must
      */
-    public function setIsMust(int $is_must): void
+    public function setIsMust(int $is_must)
     {
         $this->is_must = $is_must;
     }
@@ -77,7 +77,7 @@ class SurveyQuestionAddRequest extends TlkRequest
     /**
      * @param mixed $question_type
      */
-    public function setQuestionType(int $question_type): void
+    public function setQuestionType(int $question_type)
     {
         $this->question_type = $question_type;
     }

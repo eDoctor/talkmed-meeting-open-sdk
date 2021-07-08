@@ -41,7 +41,7 @@ class MenuSortRequest extends TlkRequest
     /**
      * @param mixed $sort
      */
-    public function setSort(array $sort): void
+    public function setSort(array $sort)
     {
         $this->sort = $sort;
     }

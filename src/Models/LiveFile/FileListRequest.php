@@ -48,7 +48,7 @@ class FileListRequest extends TlkRequest
     /**
      * @param int $page
      */
-    public function setPage(int $page) :void
+    public function setPage(int $page)
     {
         $this->page = $page;
     }
@@ -59,7 +59,7 @@ class FileListRequest extends TlkRequest
     /**
      * @param int $pageSize
      */
-    public function setPageSize(int $pageSize) :void
+    public function setPageSize(int $pageSize)
     {
         $this->page_size = $pageSize;
     }
@@ -70,7 +70,7 @@ class FileListRequest extends TlkRequest
     /**
      * @param mixed $type
      */
-    public function setType(int $type): void
+    public function setType(int $type)
     {
         $this->type = $type;
     }

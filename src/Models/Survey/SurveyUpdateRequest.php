@@ -43,7 +43,7 @@ class SurveyUpdateRequest extends TlkRequest
     /**
      * @param mixed $title
      */
-    public function setTitle(string $title): void
+    public function setTitle(string $title)
     {
         $this->title = $title;
     }
@@ -54,7 +54,7 @@ class SurveyUpdateRequest extends TlkRequest
     /**
      * @param mixed $introduction
      */
-    public function setIntroduction(string $introduction): void
+    public function setIntroduction(string $introduction)
     {
         $this->introduction = $introduction;
     }
@@ -65,7 +65,7 @@ class SurveyUpdateRequest extends TlkRequest
     /**
      * @param mixed $banner
      */
-    public function setBanner(int $banner): void
+    public function setBanner(int $banner)
     {
         $this->banner = $banner;
     }
@@ -76,7 +76,7 @@ class SurveyUpdateRequest extends TlkRequest
     /**
      * @param mixed $module
      */
-    public function setModule(int $module): void
+    public function setModule(int $module)
     {
         $this->module = $module;
     }
@@ -87,7 +87,7 @@ class SurveyUpdateRequest extends TlkRequest
     /**
      * @param mixed $module_id
      */
-    public function setModuleId(int $module_id): void
+    public function setModuleId(int $module_id)
     {
         $this->module_id = $module_id;
     }
@@ -100,7 +100,7 @@ class SurveyUpdateRequest extends TlkRequest
     /**
      * @param mixed $is_show
      */
-    public function setIsShow(int $is_show): void
+    public function setIsShow(int $is_show)
     {
         $this->is_show = $is_show;
     }
@@ -112,7 +112,7 @@ class SurveyUpdateRequest extends TlkRequest
     /**
      * @param mixed $is_answer_show
      */
-    public function setIsAnswerShow(int $is_answer_show): void
+    public function setIsAnswerShow(int $is_answer_show)
     {
         $this->is_answer_show = $is_answer_show;
     }

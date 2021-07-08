@@ -54,7 +54,7 @@ class MenuUpdateRequest extends TlkRequest
     /**
      * @param mixed $menu_title
      */
-    public function setMenuTitle(string $menu_title): void
+    public function setMenuTitle(string $menu_title)
     {
         $this->menu_title = $menu_title;
     }
@@ -65,7 +65,7 @@ class MenuUpdateRequest extends TlkRequest
     /**
      * @param mixed $menu_type
      */
-    public function setMenuType(int $menu_type): void
+    public function setMenuType(int $menu_type)
     {
         $this->menu_type = $menu_type;
     }
@@ -76,7 +76,7 @@ class MenuUpdateRequest extends TlkRequest
     /**
      * @param mixed $menu_title_en
      */
-    public function setMenuTitleEn(string $menu_title_en): void
+    public function setMenuTitleEn(string $menu_title_en)
     {
         $this->menu_title_en = $menu_title_en;
     }
@@ -87,7 +87,7 @@ class MenuUpdateRequest extends TlkRequest
     /**
      * @param mixed $menu_content
      */
-    public function setMenuContent(string $menu_content): void
+    public function setMenuContent(string $menu_content)
     {
         $this->menu_content = $menu_content;
     }
@@ -97,7 +97,7 @@ class MenuUpdateRequest extends TlkRequest
     /**
      * @param mixed $menu_href
      */
-    public function setMenuHref(string $menu_href): void
+    public function setMenuHref(string $menu_href)
     {
         $this->menu_href = $menu_href;
     }
@@ -107,7 +107,7 @@ class MenuUpdateRequest extends TlkRequest
     /**
      * @param mixed $menu_show
      */
-    public function setMenuShow(int $menu_show): void
+    public function setMenuShow(int $menu_show)
     {
         $this->menu_show = $menu_show;
     }

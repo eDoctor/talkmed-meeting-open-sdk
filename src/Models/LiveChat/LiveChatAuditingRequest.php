@@ -48,7 +48,7 @@ class LiveChatAuditingRequest extends TlkRequest
     /**
      * @param mixed $audit_status
      */
-    public function setAuditStatus($audit_status): void
+    public function setAuditStatus($audit_status)
     {
         $this->audit_status = $audit_status;
     }

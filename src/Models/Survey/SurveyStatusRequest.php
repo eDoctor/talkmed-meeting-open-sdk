@@ -44,7 +44,7 @@ class SurveyStatusRequest extends TlkRequest
     /**
      * @param int $is_show
      */
-    public  function setIsShow(int $is_show): void
+    public  function setIsShow(int $is_show)
     {
         $this->is_show = $is_show;
     }

@@ -49,7 +49,7 @@ class LiveChatListRequest extends TlkRequest
     /**
      * @param int $page
      */
-    public function setPage(int $page) :void
+    public function setPage(int $page)
     {
         $this->page = $page;
     }
@@ -60,7 +60,7 @@ class LiveChatListRequest extends TlkRequest
     /**
      * @param int $pageSize
      */
-    public function setPageSize(int $pageSize) :void
+    public function setPageSize(int $pageSize)
     {
         $this->page_size = $pageSize;
     }

@@ -49,7 +49,7 @@ class LiveRecordRequest extends TlkRequest
     /**
      * @param int $all
      */
-    public function setTitle(int $all) :void
+    public function setTitle(int $all)
     {
         $this->all = $all;
     }

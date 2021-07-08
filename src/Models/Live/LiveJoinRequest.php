@@ -47,7 +47,7 @@ class LiveJoinRequest extends TlkRequest
     /**
      * @param int $user_id
      */
-    public function setUserId(int $user_id): void
+    public function setUserId(int $user_id)
     {
         $this->user_id = $user_id;
     }
@@ -59,7 +59,7 @@ class LiveJoinRequest extends TlkRequest
     /**
      * @param int $room_role
      */
-    public function setRoomRole(int $room_role): void
+    public function setRoomRole(int $room_role)
     {
         $this->room_role = $room_role;
     }
@@ -70,7 +70,7 @@ class LiveJoinRequest extends TlkRequest
     /**
      * @param mixed $room_password
      */
-    public function setRoomPassword(string $room_password): void
+    public function setRoomPassword(string $room_password)
     {
         $this->room_password = $room_password;
     }

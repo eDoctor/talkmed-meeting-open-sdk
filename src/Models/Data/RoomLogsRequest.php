@@ -47,7 +47,7 @@ class RoomLogsRequest extends TlkRequest
     /**
      * @param mixed $is_vod
      */
-    public function setIsVod(int $is_vod): void
+    public function setIsVod(int $is_vod)
     {
         $this->is_vod = $is_vod;
     }
@@ -58,7 +58,7 @@ class RoomLogsRequest extends TlkRequest
     /**
      * @param mixed $start_at
      */
-    public function setStartAt($start_at): void
+    public function setStartAt($start_at)
     {
         $this->start_at = $start_at;
     }
@@ -70,7 +70,7 @@ class RoomLogsRequest extends TlkRequest
     /**
      * @param mixed $end_at
      */
-    public function setEndAt($end_at): void
+    public function setEndAt($end_at)
     {
         $this->end_at = $end_at;
     }

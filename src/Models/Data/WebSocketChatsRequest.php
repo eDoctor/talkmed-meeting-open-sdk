@@ -46,7 +46,7 @@ class WebSocketChatsRequest extends TlkRequest
     /**
      * @param mixed $type
      */
-    public function setType(string $type): void
+    public function setType(string $type)
     {
         $this->type = $type;
     }

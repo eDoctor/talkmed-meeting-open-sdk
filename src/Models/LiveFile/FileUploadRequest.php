@@ -47,7 +47,7 @@ class FileUploadRequest extends TlkRequest
      * @param $absPath
      * @param $fileName
      */
-    public function setFile(string $absPath, string $fileName): void
+    public function setFile(string $absPath, string $fileName)
     {
         $this->multipart[] = [
                 'name' => 'file',
@@ -60,7 +60,7 @@ class FileUploadRequest extends TlkRequest
     /**
      * @param mixed $room_id
      */
-    public function setRoomId(int $room_id): void
+    public function setRoomId(int $room_id)
     {
         $this->multipart[] = [
                 'name' => 'room_id',
@@ -71,7 +71,7 @@ class FileUploadRequest extends TlkRequest
     /**
      * @param mixed $user_id
      */
-    public function setUserId(int $user_id): void
+    public function setUserId(int $user_id)
     {
         $this->multipart[] =
             [

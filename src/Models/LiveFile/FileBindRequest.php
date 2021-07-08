@@ -48,7 +48,7 @@ class FileBindRequest extends TlkRequest
     /**
      * @param mixed $file_ids
      */
-    public function setFileIds(array $file_ids): void
+    public function setFileIds(array $file_ids)
     {
         $this->file_ids = $file_ids;
     }

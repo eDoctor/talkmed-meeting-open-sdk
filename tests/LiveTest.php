@@ -48,12 +48,12 @@ class LiveTest extends Base
         $live->setRoomRole(2);
         $live->setRoomPassword('023457');
 
-
-       $options =  array(
-            'user_id'       => 457,
-            'room_role'     => 2,
-            'room_password' => '023457'
-        );
+//
+//       $options =  array(
+//            'user_id'       => 457,
+//            'room_role'     => 2,
+//            'room_password' => '023457'
+//        );
 
         $res = $this->getClient()->request($live);
         var_dump($res);

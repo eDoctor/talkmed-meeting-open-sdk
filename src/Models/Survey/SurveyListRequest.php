@@ -41,7 +41,7 @@ class SurveyListRequest extends TlkRequest
     /**
      * @param mixed $is_show
      */
-    public function setIsShow(int $is_show): void
+    public function setIsShow(int $is_show)
     {
         $this->is_show = $is_show;
     }
@@ -53,7 +53,7 @@ class SurveyListRequest extends TlkRequest
     /**
      * @param mixed $module
      */
-    public function setModule(int $module): void
+    public function setModule(int $module)
     {
         $this->module = $module;
     }
@@ -64,7 +64,7 @@ class SurveyListRequest extends TlkRequest
     /**
      * @param mixed $module_id
      */
-    public function setModuleId(int $module_id): void
+    public function setModuleId(int $module_id)
     {
         $this->module_id = $module_id;
     }
