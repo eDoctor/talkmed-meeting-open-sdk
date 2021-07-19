@@ -1,6 +1,12 @@
 ### TalkMed Meeting Open Api Sdk 
 
-  ####  Wiki 地址
+
+### 其他版本
+
+- [go sdk](https://github.com/eDoctor/talkmed-meeting-open-sdk-golang)
+
+
+####  Wiki 地址
 
 ```
 https://wiki.meeting.talkmed.com
@@ -82,12 +88,28 @@ setApiVersion()  设置请求接口的版本 可不设置  默认v1接口
      $res = $client->request($live);
 ```
 
-说明:
+### 请求模块说明
 
-```
- new LiveJoinRequest(2089596951);  //请求参数对象构造函数会初始化请求uri
- 具体请求方法参照 wiki/Ide 提示
-```
+| 命名空间                              | 方法名前缀          | 说明             |
+| ------------------------------------- | ------------------- | ---------------- |
+| eDoctor\Meeting\Models\User           | User                | 用户相关接口     |
+| eDoctor\Meeting\Models\Live           | Live                | 会议相关接口     |
+| eDoctor\Meeting\Models\LiveFlyCheck   | LiveCheck           | 会议飞检相关接口 |
+| eDoctor\Meeting\Models\LiveFile       | File                | 文件相关接口     |
+| eDoctor\Meeting\Models\LiveChat       | LiveChat            | 会议讨论相关接口 |
+| eDoctor\Meeting\Models\Survey         | Survey              | 调研相关         |
+| eDoctor\Meeting\Models\SurveyQuestion | SurveyQuestion      | 调研问题相关     |
+| eDoctor\Meeting\Models\Menu           | Menu                | 菜单相关         |
+| eDoctor\Meeting\Models\Data           | 请求uri最后一个参数   | 数据相关         |
+
+> 说明 :
+>
+> eDoctor\Meeting\Models\Data 内的方法可依据该例子：Uri 为  v1/open/room/{roomId:[0-9]+}/live_base  该方法为将live_base  拿出作为请求类 ，为LiveBaseRequest
+>
+>  new LiveJoinRequest(2089596951);  //请求参数对象构造函数会初始化请求uri
+>  具体请求方法参照 wiki/Ide 提示
+
+
 
 #### 参会跳转地址示例
 

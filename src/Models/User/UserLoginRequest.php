@@ -174,6 +174,15 @@ class UserLoginRequest extends TlkRequest {
     }
 
 
+    private $room_password;
+
+    /**
+     * @param string $roomPassword
+     */
+    public function setRoomPassword(string $roomPassword) {
+        $this->room_password = $roomPassword;
+    }
+    
     /**
      * @param $options
      */
