@@ -21,6 +21,14 @@ class TypeData {
      */
     const DEFAULT_PLATFORM = 'open';
 
+
+
+    /**
+     * api 默认版本v1
+     */
+    const API_VERSION    = 'v1';
+    const API_VERSION_V2 = 'v2';
+
     /**
      * 请求方式
      */

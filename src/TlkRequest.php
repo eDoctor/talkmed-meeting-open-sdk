@@ -22,6 +22,8 @@ abstract class TlkRequest {
 
      const REQUEST_METHOD = 'GET';
 
+     const DEFAULT_API_VERSION = TypeData::API_VERSION;
+
      abstract function setOptions(array $options);
 
      abstract function getRequestUri() :string;

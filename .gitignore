@@ -2,3 +2,5 @@
 /vendor
 .git
 composer.lock
+.phpunit.result.cache
+

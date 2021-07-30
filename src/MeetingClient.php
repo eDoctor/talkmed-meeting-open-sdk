@@ -21,11 +21,6 @@ use GuzzleHttp\Psr7\Request;
  */
 class MeetingClient {
 
-    /**
-     * api 默认版本v1
-     */
-    const API_VERSION = 'v1';
-
     private $appId;
 
     private $appSecret;
@@ -36,7 +31,7 @@ class MeetingClient {
      * 接口版本
      * @var string
      */
-    private $version = self::API_VERSION;
+    private $version = null;
 
 
     /**
@@ -71,7 +66,7 @@ class MeetingClient {
      * @param string $version
      * @return $this
      */
-    public function setApiVersion(string $version = self::API_VERSION) :MeetingClient {
+    public function setApiVersion(string $version = TypeData::API_VERSION) :MeetingClient {
 
          $this->version = $version;
          return $this;
@@ -113,11 +108,16 @@ class MeetingClient {
              throw new RequestException('请设置base_uri');
         }
 
+        if (is_null($this->version)) {
+            $this->version = $methodRequest::DEFAULT_API_VERSION ? $methodRequest::DEFAULT_API_VERSION :TypeData::API_VERSION ;
+        }
+
         $uri = $this->getRequestUri($methodRequest->getRequestUri());
 
         if (empty($uri)) {
             throw new RequestException('请设置uri');
         }
+
         $method = $methodRequest::REQUEST_METHOD;
         $params = $this->getVars($methodRequest);
 

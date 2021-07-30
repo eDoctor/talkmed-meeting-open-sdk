@@ -27,6 +27,8 @@ class LiveCreateRequest extends TlkRequest {
 
     private $request_uri;
 
+    const DEFAULT_API_VERSION = TypeData::API_VERSION_V2;
+
     /**
      * 初始化请求地址
      * UserCreateRequest constructor.

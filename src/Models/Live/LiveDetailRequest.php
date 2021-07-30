@@ -26,6 +26,8 @@ class LiveDetailRequest extends TlkRequest
 
     const REQUEST_URI = 'open/room/%d';
 
+    const DEFAULT_API_VERSION = TypeData::API_VERSION_V2;
+
 
     public function __construct(int $roomId)
     {
