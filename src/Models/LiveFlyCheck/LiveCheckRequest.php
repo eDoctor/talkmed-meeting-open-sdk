@@ -26,7 +26,9 @@ class LiveCheckRequest extends TlkRequest
 
     const REQUEST_URI = 'open/room/check';
 
-
+    /**
+     * LiveCheckRequest constructor.
+     */
     public function __construct()
     {
         $this->request_uri = self::REQUEST_URI;

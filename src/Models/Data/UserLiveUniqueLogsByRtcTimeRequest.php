@@ -24,7 +24,11 @@ class UserLiveUniqueLogsByRtcTimeRequest extends TlkRequest
 
     const REQUEST_URI = 'open/room/%d/user_live_uniquelogs_by_rtc_time';
 
-
+    /**
+     * UserLiveUniqueLogsByRtcTimeRequest constructor.
+     * @param $roomId
+     * @throws RequestException
+     */
     public function __construct($roomId)
     {
         if (empty($roomId)) throw new RequestException('缺少room_id参数 初始化uri');

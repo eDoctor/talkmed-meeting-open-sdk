@@ -10,6 +10,7 @@ namespace eDoctor\Meeting\Models\Menu;
 
 
 use eDoctor\Meeting\Common\TypeData;
+use eDoctor\Meeting\Exception\RequestException;
 use eDoctor\Meeting\TlkRequest;
 
 
@@ -29,7 +30,8 @@ class MenuUpdateRequest extends TlkRequest
     /**
      * MenuUpdateRequest constructor.
      * @param $roomId
-     * @param $menuId
+     * @param $menuSign
+     * @throws RequestException
      */
     public function __construct($roomId, $menuSign)
     {

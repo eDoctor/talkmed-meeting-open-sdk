@@ -24,6 +24,11 @@ class RoomLogsRequest extends TlkRequest
 
     const REQUEST_URI = 'open/room/%d/room_logs';
 
+    /**
+     * RoomLogsRequest constructor.
+     * @param $roomId
+     * @throws RequestException
+     */
     public function __construct($roomId)
     {
         if (empty($roomId)) throw new RequestException('缺少room_id参数 初始化uri');

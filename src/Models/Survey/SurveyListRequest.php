@@ -19,6 +19,9 @@ class SurveyListRequest extends TlkRequest
 
     const REQUEST_URI = 'open/survey';
 
+    /**
+     * SurveyListRequest constructor.
+     */
     public function __construct()
     {
         $this->request_uri = self::REQUEST_URI;

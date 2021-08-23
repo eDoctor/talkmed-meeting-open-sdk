@@ -26,7 +26,11 @@ class LiveDeleteRequest extends TlkRequest
 
     const REQUEST_URI = 'open/room/%d';
 
-
+    /**
+     * LiveDeleteRequest constructor.
+     * @param int $roomId
+     * @throws RequestException
+     */
     public function __construct(int $roomId)
     {
         if (empty($roomId)) throw new RequestException('缺少room_id参数 初始化uri');

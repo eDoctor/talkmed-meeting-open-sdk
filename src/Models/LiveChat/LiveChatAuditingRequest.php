@@ -26,6 +26,12 @@ class LiveChatAuditingRequest extends TlkRequest
 
     const REQUEST_URI = 'open/room/%d/chats/%d';
 
+    /**
+     * LiveChatAuditingRequest constructor.
+     * @param $roomId
+     * @param $chatId
+     * @throws RequestException
+     */
     public function __construct($roomId, $chatId)
     {
         if (empty($roomId)) throw new RequestException('初始化request uri 缺少room_id参数 ');

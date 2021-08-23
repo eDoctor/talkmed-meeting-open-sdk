@@ -26,7 +26,11 @@ class FilePrintListRequest extends TlkRequest
 
     const REQUEST_URI = 'open/file/%d/print';
 
-
+    /**
+     * FilePrintListRequest constructor.
+     * @param $fileId
+     * @throws RequestException
+     */
     public function __construct($fileId)
     {
         if (empty($fileId)) throw new RequestException('缺少file_id参数 初始化uri');
@@ -45,7 +49,7 @@ class FilePrintListRequest extends TlkRequest
 
 
     /**
-     * @param $options
+     * @param array $options
      */
     public function setOptions(array $options) {
 

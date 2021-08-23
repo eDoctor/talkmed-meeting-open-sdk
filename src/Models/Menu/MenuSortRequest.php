@@ -20,6 +20,11 @@ class MenuSortRequest extends TlkRequest
 
     const REQUEST_URI = 'open/room/%d/menu_sort';
 
+    /**
+     * MenuSortRequest constructor.
+     * @param $roomId
+     * @throws RequestException
+     */
     public function __construct($roomId)
     {
         if (empty($roomId)) throw new RequestException('初始化uri: 缺少room_id参数 ');

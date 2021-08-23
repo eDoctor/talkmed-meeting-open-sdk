@@ -26,7 +26,9 @@ class FileListRequest extends TlkRequest
 
     const REQUEST_URI = 'open/file';
 
-
+    /**
+     * FileListRequest constructor.
+     */
     public function __construct()
     {
         $this->request_uri = self::REQUEST_URI;

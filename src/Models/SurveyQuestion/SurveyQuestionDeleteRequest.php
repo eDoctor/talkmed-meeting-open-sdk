@@ -20,6 +20,12 @@ class SurveyQuestionDeleteRequest extends TlkRequest
 
     const REQUEST_URI = 'open/survey/%d/question/%d';
 
+    /**
+     * SurveyQuestionDeleteRequest constructor.
+     * @param $surveyId
+     * @param $questionId
+     * @throws RequestException
+     */
     public function __construct($surveyId, $questionId)
     {
         if (empty($surveyId) || empty($questionId)) throw new RequestException('初始化uri: 缺少surveyId/questionId参数');

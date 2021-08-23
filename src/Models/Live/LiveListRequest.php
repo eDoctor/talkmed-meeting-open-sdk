@@ -25,7 +25,9 @@ class LiveListRequest extends TlkRequest
 
     const REQUEST_URI = 'open/room';
 
-
+    /**
+     * LiveListRequest constructor.
+     */
     public function __construct()
     {
         $this->request_uri = self::REQUEST_URI;
