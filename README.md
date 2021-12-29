@@ -100,7 +100,9 @@ setApiVersion()  设置请求接口的版本 可不设置  默认v1接口
 | eDoctor\Meeting\Models\Survey         | Survey              | 调研相关         |
 | eDoctor\Meeting\Models\SurveyQuestion | SurveyQuestion      | 调研问题相关     |
 | eDoctor\Meeting\Models\Menu           | Menu                | 菜单相关         |
-| eDoctor\Meeting\Models\Data           | 请求uri最后一个参数   | 数据相关         |
+| eDoctor\Meeting\Models\Form           | Form                | 表单相关         |
+| eDoctor\Meeting\Models\WhiteList      | Whitelist           | 白名单相关       |
+| eDoctor\Meeting\Models\Data           | 请求uri最后一个参数    | 数据相关         |
 
 > 说明 :
 >
@@ -128,6 +130,8 @@ class CommonTest extends TestCase {
 例子:
 https://devmeeting.talkmed.com/oauth/authorize?app_id=tk60bd8aefed173&auth_token=e96a4dba-4eb2-dd1d-7fa3-bdfcd36d98d7&timestamp=1623295227&signature=60bfde6b69b7d333892bf05586598235fea6cc96a323a076ea2f8d6a934337c8&platform=web&room_id=1631372727&role=2&channel=&password=
 ```
+
+- ### [版本更新记录](doc/changelog.md)
 
 
 
