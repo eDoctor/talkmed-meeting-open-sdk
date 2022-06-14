@@ -35,7 +35,7 @@ class MenuUpdateRequest extends TlkRequest
      */
     public function __construct($roomId, $menuSign)
     {
-        if (empty($roomId) || empty($menuSign)) throw new RequestException('初始化uri: 缺少room_id/menuId参数 ');
+        if (empty($roomId)) throw new RequestException('初始化uri: 缺少room_id/menuId参数 ');
         $this->request_uri = sprintf(self::REQUEST_URI, $roomId, $menuSign);
     }
 
@@ -84,7 +84,7 @@ class MenuUpdateRequest extends TlkRequest
     }
 
 
-    private  $menu_content;
+    private $menu_content;
 
     /**
      * @param mixed $menu_content
@@ -94,7 +94,7 @@ class MenuUpdateRequest extends TlkRequest
         $this->menu_content = $menu_content;
     }
 
-    private  $menu_href;
+    private $menu_href;
 
     /**
      * @param mixed $menu_href
@@ -104,7 +104,7 @@ class MenuUpdateRequest extends TlkRequest
         $this->menu_href = $menu_href;
     }
 
-    private  $menu_show;
+    private $menu_show;
 
     /**
      * @param mixed $menu_show
@@ -114,14 +114,25 @@ class MenuUpdateRequest extends TlkRequest
         $this->menu_show = $menu_show;
     }
 
+    private $menu_sign;
+
+    /**
+     * @param mixed $menu_sign
+     */
+    public function setMenuSign($menu_sign)
+    {
+        $this->menu_sign = $menu_sign;
+    }
+
     /**
      * @param array $options
      * @throws \Exception
      */
-    public function setOptions(array $options) {
+    public function setOptions(array $options)
+    {
 
         foreach ($options as $field => $vale) {
-            if(in_array($field, TypeData::FILTER_VARS)) continue;
+            if (in_array($field, TypeData::FILTER_VARS)) continue;
             $this->$field = $vale;
         }
     }

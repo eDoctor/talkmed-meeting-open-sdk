@@ -39,11 +39,46 @@ class PopUpAddRequest extends TlkRequest
     }
 
     private $content;
+
+    public function setContent(string $content)
+    {
+        $this->content = $content;
+    }
+
     private $close_enable;
+
+    public function setCloseEnable(string $close_enable)
+    {
+        $this->close_enable = $close_enable;
+    }
+
     private $close_duration;
+
+    public function setCloseDuration(string $close_duration)
+    {
+        $this->close_duration = $close_duration;
+    }
+
     private $popup_now;
+
+    public function setPopupNow(string $popup_now)
+    {
+        $this->popup_now = $popup_now;
+    }
+
     private $popup_at;
+
+    public function setPopupAt(string $popup_at)
+    {
+        $this->popup_at = $popup_at;
+    }
+
     private $title;
+
+    public function setTitle(string $title)
+    {
+        $this->title = $title;
+    }
 
     /**
      * @param array $options

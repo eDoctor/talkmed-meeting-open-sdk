@@ -20,9 +20,10 @@ use eDoctor\Meeting\TlkRequest;
  * Class UserCreateRequest
  * @package eDoctor\Meeting\Models\User
  */
-class UserRegisterRequest extends TlkRequest {
+class UserRegisterRequest extends TlkRequest
+{
 
-    const REQUEST_METHOD  = TypeData::METHOD_POST;
+    const REQUEST_METHOD = TypeData::METHOD_POST;
 
     const REQUEST_URI = 'open/register';
 
@@ -31,8 +32,9 @@ class UserRegisterRequest extends TlkRequest {
      * 初始化请求地址
      * UserCreateRequest constructor.
      */
-    public function __construct() {
-        $this->request_uri =  self::REQUEST_URI;
+    public function __construct()
+    {
+        $this->request_uri = self::REQUEST_URI;
     }
 
 
@@ -52,7 +54,8 @@ class UserRegisterRequest extends TlkRequest {
     /**
      * @param string $type
      */
-    public function setType(string $type) {
+    public function setType(string $type)
+    {
         $this->type = $type;
     }
 
@@ -62,7 +65,8 @@ class UserRegisterRequest extends TlkRequest {
     /**
      * @param int $isLogin
      */
-    public function setIsLogin(int $isLogin) {
+    public function setIsLogin(int $isLogin)
+    {
         $this->login = $isLogin;
     }
 
@@ -71,7 +75,8 @@ class UserRegisterRequest extends TlkRequest {
     /**
      * @param string $platform
      */
-    public function setPlatform(string $platform = TypeData::DEFAULT_PLATFORM) {
+    public function setPlatform(string $platform = TypeData::DEFAULT_PLATFORM)
+    {
         $this->platform = $platform;
     }
 
@@ -80,7 +85,8 @@ class UserRegisterRequest extends TlkRequest {
     /**
      * @param string $nickname
      */
-    public function setNickName(string $nickname) {
+    public function setNickName(string $nickname)
+    {
         $this->nickname = $nickname;
     }
 
@@ -91,7 +97,8 @@ class UserRegisterRequest extends TlkRequest {
      * @param string $email
      * @throws RequestException
      */
-    public function setEmail(string $email) {
+    public function setEmail(string $email)
+    {
 
         if (!Tool::verifyEmail($email)) throw new RequestException('请设置正确的email参数');
         $this->email = $email;
@@ -104,7 +111,8 @@ class UserRegisterRequest extends TlkRequest {
      * @param string $mobile
      * @throws RequestException
      */
-    public function setMobile(string $mobile) {
+    public function setMobile(string $mobile)
+    {
 
         if (!Tool::verifyMobile($mobile)) throw new RequestException('请设置正确的mobile参数');
         $this->mobile = $mobile;
@@ -115,7 +123,8 @@ class UserRegisterRequest extends TlkRequest {
     /**
      * @param string $realName
      */
-    public function setRealName(string $realName) {
+    public function setRealName(string $realName)
+    {
         $this->realname = $realName;
     }
 
@@ -124,7 +133,8 @@ class UserRegisterRequest extends TlkRequest {
     /**
      * @param string $avatar
      */
-    public function setAvatar(string $avatar) {
+    public function setAvatar(string $avatar)
+    {
         $this->avatar = $avatar;
     }
 
@@ -133,7 +143,8 @@ class UserRegisterRequest extends TlkRequest {
     /**
      * @param string $password
      */
-    public function setPassword(string $password) {
+    public function setPassword(string $password)
+    {
         $this->password = $password;
     }
 
@@ -142,7 +153,8 @@ class UserRegisterRequest extends TlkRequest {
     /**
      * @param int $userRole
      */
-    public function setUserRole(int $userRole) {
+    public function setUserRole(int $userRole)
+    {
         $this->user_role = $userRole;
     }
 
@@ -151,7 +163,8 @@ class UserRegisterRequest extends TlkRequest {
     /**
      * @param string $openid
      */
-    public function setOpenId(string $openid) {
+    public function setOpenId(string $openid)
+    {
         $this->openid = $openid;
     }
 
@@ -161,7 +174,8 @@ class UserRegisterRequest extends TlkRequest {
     /**
      * @param string $unionid
      */
-    public function setUnionId(string $unionid) {
+    public function setUnionId(string $unionid)
+    {
         $this->unionid = $unionid;
     }
 
@@ -170,7 +184,8 @@ class UserRegisterRequest extends TlkRequest {
     /**
      * @param string $roomId
      */
-    public function setRoomId(string $roomId) {
+    public function setRoomId(string $roomId)
+    {
         $this->room_id = $roomId;
     }
 
@@ -179,7 +194,8 @@ class UserRegisterRequest extends TlkRequest {
     /**
      * @param int $roomRole
      */
-    public function setRoomRole(int $roomRole) {
+    public function setRoomRole(int $roomRole)
+    {
         $this->room_role = $roomRole;
     }
 
@@ -189,15 +205,36 @@ class UserRegisterRequest extends TlkRequest {
     /**
      * @param string $roomPassword
      */
-    public function setRoomPassword(string $roomPassword) {
+    public function setRoomPassword(string $roomPassword)
+    {
         $this->room_password = $roomPassword;
     }
 
+    private $wechat_openid;
+
+    /**
+     * @param string $wechatOpenid
+     */
+    public function setWechatOpenId($wechatOpenid)
+    {
+        $this->wechat_openid = $wechatOpenid;
+    }
+
+    private $wechat_unionid;
+
+    /**
+     * @param string $wechatUnionid
+     */
+    public function setWechatUnionid($wechatUnionid)
+    {
+        $this->wechat_unionid = $wechatUnionid;
+    }
 
     /**
      * @param $options
      */
-    public function setOptions(array $options) {
+    public function setOptions(array $options)
+    {
         foreach ($options as $field => $vale) {
             if (in_array($field, TypeData::FILTER_VARS)) continue;
             $this->$field = $vale;
