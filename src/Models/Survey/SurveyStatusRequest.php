@@ -42,28 +42,34 @@ class SurveyStatusRequest extends TlkRequest
     }
 
 
-
     private $is_show;
 
 
     /**
      * @param int $is_show
      */
-    public  function setIsShow(int $is_show)
+    public function setIsShow(int $is_show)
     {
         $this->is_show = $is_show;
     }
 
+    private $module_id;
+
+    public function setModuleId(int $module_id)
+    {
+        $this->module_id = $module_id;
+    }
 
 
     /**
      * @param array $options
      * @throws \Exception
      */
-    public function setOptions(array $options) {
+    public function setOptions(array $options)
+    {
 
         foreach ($options as $field => $vale) {
-            if(in_array($field, TypeData::FILTER_VARS)) continue;
+            if (in_array($field, TypeData::FILTER_VARS)) continue;
             $this->$field = $vale;
         }
     }
