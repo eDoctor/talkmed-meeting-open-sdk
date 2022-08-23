@@ -28,17 +28,14 @@ require_once 'Base.php';
  */
 class LiveTest extends Base
 {
-
-    public function testLiveRecordRequest() {
-
-        $client  = (new MeetingClient(self::APP_ID, self::APP_SECRET))->setApiBaseUri(self::getEnv());
+    public function testLiveRecordRequest()
+    {
+        $client = (new MeetingClient(self::APP_ID, self::APP_SECRET))->setApiBaseUri(self::getEnv());
         $live = new LiveRecordRequest(1631372727);
         $res = $client->request($live);
 
-        $this->assertEquals($res['code'],0);
+        $this->assertEquals($res['code'], 0);
     }
-
-
 
 
     public function testLiveJoinRequest()
@@ -57,12 +54,8 @@ class LiveTest extends Base
 
         $res = $this->getClient()->request($live);
         var_dump($res);
-        $this->assertEquals($res['code'],0);
-
+        $this->assertEquals($res['code'], 0);
     }
-
-
-
 
 
     public function testLiveScreensHotRequest()
@@ -70,18 +63,18 @@ class LiveTest extends Base
         $live = new LiveScreensHotRequest(1631372727);
         $res = $this->getClient()->request($live);
         var_dump($res);
-        $this->assertEquals($res['code'],0);
+        $this->assertEquals($res['code'], 0);
     }
 
 
     public function testLiveAddSpeakerRequest()
     {
         $speakers = [
-                [
+            [
                 'speaker_user_id' => 457,
                 'speaker_password' => 'abc123'
-                 ]
-            ];
+            ]
+        ];
 
         $addSpeaker = new LiveAddSpeakerRequest(1631372727);
         $addSpeaker->setSpeakers($speakers);
@@ -89,73 +82,66 @@ class LiveTest extends Base
         $res = $this->getClient()->request($addSpeaker);
         var_dump($res);
 
-        $this->assertEquals($res['code'],0);
-
+        $this->assertEquals($res['code'], 0);
     }
 
 
-    public function testLiveStatusRequest(){
-
+    public function testLiveStatusRequest()
+    {
         $live = new LiveStatusRequest(1631372727);
         $live->setStatus(0);
 
         $client = $this->getClient();
-        $res =  $client->request($live);
+        $res = $client->request($live);
         var_dump($res);
-        $this->assertEquals($res['code'],0);
+        $this->assertEquals($res['code'], 0);
     }
 
 
-    public function testLiveDeleteRequest(){
-
+    public function testLiveDeleteRequest()
+    {
         $live = new LiveDeleteRequest(1753909660);
         $client = $this->getClient()->setApiBaseUri(self::getEnv());
-        $res =  $client->request($live);
+        $res = $client->request($live);
 
         var_dump($res);
 
-        $this->assertEquals($res['code'],0);
-
+        $this->assertEquals($res['code'], 0);
     }
 
 
-    public function testLiveListRequest(){
+    public function testLiveListRequest()
+    {
+        $liveList = new LiveListRequest();
 
-       $liveList = new LiveListRequest();
+        $liveList->setPage(1);
+        $client = $this->getClient()->setApiBaseUri(self::getEnv());
 
-       $liveList->setPage(1);
-       $client = $this->getClient()->setApiBaseUri(self::getEnv());
-
-       $res =  $client->request($liveList);
+        $res = $client->request($liveList);
         var_dump($res);
 
-       $this->assertEquals(0,0);
-
+        $this->assertEquals(0, 0);
     }
 
 
-
-    public function testLiveDetailRequest(){
-
-        $liveList = new LiveDetailRequest(1753909660);
+    public function testLiveDetailRequest()
+    {
+        $liveList = new LiveDetailRequest(3582088438);
 
         $client = $this->getClient()->setApiBaseUri(self::getEnv())->setApiVersion();
-
-        $res =  $client->request($liveList);
+        var_dump($client);
+        $res = $client->request($liveList);
         var_dump($res);
 
-        $this->assertEquals(0,0);
-
+        $this->assertEquals(0, 0);
     }
-
 
 
     /**
      * 会议创建测试用例
      */
-    function testLiveCreateRequest() {
-
-
+    public function testLiveCreateRequest()
+    {
         $live = new LiveCreateRequest();
 
         $live->setTitle('test1');
@@ -178,18 +164,15 @@ class LiveTest extends Base
         $res = $client->setApiBaseUri($this->getEnv())->setApiVersion('v2')->request($live);
 
         var_dump($res);
-        $this->assertContains('','');
+        $this->assertContains('', '');
     }
-
-
 
 
     /**
      * 会议创建测试用例
      */
-    function testLiveEdit() {
-
-
+    public function testLiveEdit()
+    {
         $live = new LiveUpdateRequest(1753909660);
 
         $live->setTitle('sdk_room_id');
@@ -212,7 +195,6 @@ class LiveTest extends Base
         $res = $client->setApiBaseUri($this->getEnv())->setApiVersion('v2')->request($live);
 
         var_dump($res);
-        $this->assertContains('','');
+        $this->assertContains('', '');
     }
-
 }
