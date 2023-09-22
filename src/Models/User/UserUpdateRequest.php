@@ -30,7 +30,7 @@ class UserUpdateRequest extends TlkRequest {
     /**
      * 路由
      */
-    const REQUEST_URI = '/v1/open/user/%d';
+    const REQUEST_URI = 'open/user/%d';
 
     /**
      * 初始化请求地址
