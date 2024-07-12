@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: yuzihui
- * Date: 2021/6/8
- * Time: 下午3:33
- */
 
 namespace eDoctor\Meeting\Models\LiveShareUrl;
 
@@ -14,24 +8,14 @@ use eDoctor\Meeting\TlkRequest;
 
 
 /**
- * 菜单更新
- * Class MenuUpdateRequest
- * @package eDoctor\Meeting\Models\Menu
+ * 自定义分享链接更新
  */
 class ShareUrlUpdateRequest extends TlkRequest
 {
-
     const REQUEST_METHOD = TypeData::METHOD_PUT;
-
 
     const REQUEST_URI = 'open/room/%d/custom_share_url/%d';
 
-    /**
-     * MenuUpdateRequest constructor.
-     * @param $roomId
-     * @param $menuSign
-     * @throws RequestException
-     */
     public function __construct($roomId, $id)
     {
         if (empty($roomId)) throw new RequestException('初始化uri: 缺少room_id/menuId参数 ');
@@ -40,9 +24,6 @@ class ShareUrlUpdateRequest extends TlkRequest
 
     private $request_uri;
 
-    /**
-     * @return string
-     */
     public function getRequestUri(): string
     {
         return $this->request_uri;
@@ -75,10 +56,7 @@ class ShareUrlUpdateRequest extends TlkRequest
     {
         $this->password = $password;
     }
-    /**
-     * @param array $options
-     * @throws \Exception
-     */
+
     public function setOptions(array $options)
     {
 

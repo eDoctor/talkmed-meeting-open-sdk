@@ -8,29 +8,31 @@ use eDoctor\Meeting\TlkRequest;
 
 
 /**
- * 删除自定义分享链接
+ * 自定义分享链接详情
  */
-class ShareUrlDeleteRequest extends TlkRequest
+class ShareUrlShowRequest extends TlkRequest
 {
 
-    const REQUEST_METHOD = TypeData::METHOD_DELETE;
+    const REQUEST_METHOD = TypeData::METHOD_GET;
 
 
     const REQUEST_URI = 'open/room/%d/custom_share_url/%d';
 
 
-    public function __construct($roomId, $id)
+    public function __construct($roomId, $type)
     {
         if (empty($roomId)) throw new RequestException('初始化uri: 缺少room_id/menuId参数 ');
-        $this->request_uri = sprintf(self::REQUEST_URI, $roomId, $id);
+        $this->request_uri = sprintf(self::REQUEST_URI, $roomId, $type);
     }
 
     private $request_uri;
+
 
     public function getRequestUri(): string
     {
         return $this->request_uri;
     }
+
 
     public function setOptions(array $options)
     {

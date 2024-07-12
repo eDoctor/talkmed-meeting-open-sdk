@@ -11,12 +11,13 @@ namespace eDoctor\Tests;
 use eDoctor\Meeting\Exception\RequestException;
 use eDoctor\Meeting\Models\LiveShareUrl\ShareUrlAddRequest;
 use eDoctor\Meeting\Models\LiveShareUrl\ShareUrlDeleteRequest;
+use eDoctor\Meeting\Models\LiveShareUrl\ShareUrlShowRequest;
 use eDoctor\Meeting\Models\LiveShareUrl\ShareUrlUpdateRequest;
 
 require_once 'Base.php';
 
 // ./vendor/bin/phpunit tests/LiveShareUrlTest.php
-// ./vendor/bin/phpunit --filter testShareUrlUpdateRequest
+// ./vendor/bin/phpunit tests/LiveShareUrlTest.php --filter testShareUrlShowRequest
 class LiveShareUrlTest extends Base
 {
 
@@ -56,16 +57,16 @@ class LiveShareUrlTest extends Base
 
         $this->assertEquals(0, 0);
     }
-//
-//
-//    function testShareUrlDeleteRequest()
-//    {
-//        $menu = new ShareUrlDeleteRequest(2089596951,46);
-//
-//        $res = $this->getClient()->request($menu);
-//        var_dump($res);
-//
-//        $this->assertEquals(0, 0);
-//    }
+
+
+    function testShareUrlShowRequest()
+    {
+        $menu = new ShareUrlShowRequest(2452987794,3);
+
+        $res = $this->getClient()->request($menu);
+        var_dump($res['data']['share_url']);
+
+        $this->assertEquals(0, 0);
+    }
 
 }
