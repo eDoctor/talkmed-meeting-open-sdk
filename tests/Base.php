@@ -8,7 +8,7 @@
 
 namespace eDoctor\Tests;
 
-require_once '../vendor/autoload.php';
+require_once './vendor/autoload.php';
 
 ini_set('display_errors','on');
 ini_set('display_errors','on');
@@ -23,8 +23,8 @@ class Base extends TestCase
 
     const IS_DEV = true; //设置当前 test 运行接口的环境
 
-    const APP_ID = 'xxxxx';
-    const APP_SECRET = 'xxxxxxxxxxxxxxx';
+    const APP_ID = 'tk5f59f156592bb908417117';
+    const APP_SECRET = '41476db4386bcd778856033a22e58cc3';
 
 
     const DEV_BASE_URI = 'https://devapimeeting.talkmed.com';
