@@ -8,7 +8,7 @@
 
 namespace eDoctor\Tests;
 
-require_once 'Base.php';
+require_once __DIR__ . '/Base.php';
 
 use eDoctor\Meeting\Models\SurveyQuestion\SurveyQuestionAddRequest;
 use eDoctor\Meeting\Models\SurveyQuestion\SurveyQuestionDeleteRequest;

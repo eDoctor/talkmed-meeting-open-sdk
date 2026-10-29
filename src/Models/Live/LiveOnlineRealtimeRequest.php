@@ -6,7 +6,7 @@
  * Time: 上午11:30
  */
 
-namespace App\Helpers;
+namespace eDoctor\Meeting\Models\Live;
 
 
 use eDoctor\Meeting\Common\TypeData;

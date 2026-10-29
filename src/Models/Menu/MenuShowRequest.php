@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Helper;
+namespace eDoctor\Meeting\Models\Menu;
 
 
 use eDoctor\Meeting\Common\TypeData;

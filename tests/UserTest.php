@@ -8,7 +8,7 @@
 
 namespace eDoctor\Tests;
 
-require_once 'Base.php';
+require_once __DIR__ . '/Base.php';
 
 use eDoctor\Meeting\Models\User\UserRegisterRequest;
 use eDoctor\Meeting\Models\User\UserLoginRequest;

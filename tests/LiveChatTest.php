@@ -12,7 +12,7 @@ namespace eDoctor\Tests;
 use eDoctor\Meeting\Models\LiveChat\LiveChatAuditingRequest;
 use eDoctor\Meeting\Models\LiveChat\LiveChatListRequest;
 
-require_once 'Base.php';
+require_once __DIR__ . '/Base.php';
 
 
 class LiveChatTest extends Base

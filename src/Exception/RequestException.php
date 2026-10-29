@@ -15,8 +15,14 @@ namespace eDoctor\Meeting\Exception;
  */
 class RequestException extends \Exception
 {
-    public function  __construct($errorMessage, $errorCode = 404)
+    /**
+     * @param string $errorMessage
+     * @param int $errorCode
+     */
+    public function __construct($errorMessage = '', $errorCode = 404)
     {
-        throw new \Exception($errorMessage, $errorCode);
+        // 此前这里直接 throw 新的 \Exception，导致 RequestException 永远无法被 catch 到，
+        // 且第二个参数传入非 int 时会触发 TypeError（PHP 8 强类型）。
+        parent::__construct((string)$errorMessage, (int)$errorCode);
     }
 }

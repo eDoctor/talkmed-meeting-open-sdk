@@ -6,7 +6,7 @@
  * Time: 下午3:33
  */
 
-namespace App\Helper;
+namespace eDoctor\Meeting\Models\LiveAd;
 
 use eDoctor\Meeting\Common\TypeData;
 use eDoctor\Meeting\Exception\RequestException;

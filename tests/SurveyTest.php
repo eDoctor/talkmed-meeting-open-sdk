@@ -16,7 +16,7 @@ use eDoctor\Meeting\Models\Survey\SurveyListRequest;
 use eDoctor\Meeting\Models\Survey\SurveyStatusRequest;
 use eDoctor\Meeting\Models\Survey\SurveyUpdateRequest;
 
-require_once 'Base.php';
+require_once __DIR__ . '/Base.php';
 
 class SurveyTest extends Base
 {

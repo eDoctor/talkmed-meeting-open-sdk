@@ -16,7 +16,7 @@ use eDoctor\Meeting\Models\LiveFile\FileListRequest;
 use eDoctor\Meeting\Models\LiveFile\FilePrintListRequest;
 use eDoctor\Meeting\Models\LiveFile\FileUploadRequest;
 
-require_once 'Base.php';
+require_once __DIR__ . '/Base.php';
 
 class LiveFileTest extends Base
 {

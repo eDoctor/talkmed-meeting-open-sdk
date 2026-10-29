@@ -1,9 +1,33 @@
 ## 版本更新记录
-### 20260302
-#### 更新composer依赖版本
 
-- php版本依赖提升:php>=8.0
-- 提升guzzlehttp/guzzle版本
+### v2.1 20261029
+
+#### 更新
+- 完整支持 PHP 8.4 / 8.5，兼容范围 `^7.2.5 || ^8.0`
+- `guzzlehttp/guzzle` 约束由 `~7.4.5` 放宽为 `^7.0`（原约束会把 guzzle 锁死 7.4.5，
+  其依赖 guzzlehttp/promises 1.x 在 PHP 8.5 下每次加载都会输出弃用告警）
+- `TlkRequest` 增加 `#[\AllowDynamicProperties]`，消除 PHP 8.2+ 动态属性弃用告警
+  （各模型 `setOptions()` 允许写入任意字段）
+- `MeetingClient::getVars()` 移除 `ReflectionProperty::setAccessible()`，该方法
+  自 PHP 8.1 起无效、8.5 起弃用
+- 请求头 `timestamp` 改为字符串，消除 guzzle 7.11+ 的 "Passing int to request
+  option headers" 弃用告警（guzzle 8.0 起只接受 string）
+- `require-dev` 升级：phpunit `^9.6 || ^10.5 || ^11.5`、mockery `^1.3`
+- 新增 phpunit.xml.dist、无网络单元测试、GitHub Actions 多版本 CI
+
+#### 修复
+- `RequestException` 构造函数原为直接 `throw new \Exception()`，导致该异常永远无法被
+  catch，且第二个参数传非 int 时触发 TypeError；现改为正常调用 `parent::__construct()`
+- 修复 8 个文件的命名空间笔误（写成 `App\Helper` / `App\Helpers`），
+  这些类此前无法通过 PSR-4 加载：
+  `Models/LiveAd/*`(3)、`Models/LivePopup/*`(3)、`Models/Menu/MenuShowRequest`、
+  `Models/Live/LiveOnlineRealtimeRequest`
+- 测试文件中的相对 `require` 改用 `__DIR__` 定位
+
+### v2.0 20220303
+
+#### 更新
+- php版本最低为7.4
 
 ### v1.07 20220303
 #### 新增

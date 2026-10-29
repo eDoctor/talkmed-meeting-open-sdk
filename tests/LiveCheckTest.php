@@ -12,7 +12,7 @@ use eDoctor\Meeting\Models\LiveFlyCheck\LiveCheckLayoutRequest;
 use eDoctor\Meeting\Models\LiveFlyCheck\LiveCheckMemberRequest;
 use eDoctor\Meeting\Models\LiveFlyCheck\LiveCheckRequest;
 
-require_once 'Base.php';
+require_once __DIR__ . '/Base.php';
 
 
 

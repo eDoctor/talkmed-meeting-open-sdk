@@ -80,7 +80,8 @@ class MeetingClient {
     {
         $time = time();
         return  [
-            'timestamp'   => $time,
+            // guzzle 7.11+ 已弃用 int 类型的 header 值（8.0 起仅允许 string），签名计算仍用 int 时间戳
+            'timestamp'   => (string)$time,
             'appid'       => $this->appId,
             'signature'   => Tool::getOpenApiSignature($this->appId, $this->appSecret, $time)
         ];
@@ -179,7 +180,7 @@ class MeetingClient {
         for ($i = 0; $i < $total;$i++) {
             $field = $vars[$i];
             $a = $ref->getProperty($field);
-            $a->setAccessible(true);
+            // PHP 8.1+ 起私有属性无需 setAccessible(true)，该方法自 8.5 起已弃用
             $val = $a->getValue($request);
             if (is_null($val) || in_array($field, TypeData::FILTER_VARS)) {
                  continue;

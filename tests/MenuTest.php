@@ -14,7 +14,7 @@ use eDoctor\Meeting\Models\Menu\MenuListRequest;
 use eDoctor\Meeting\Models\Menu\MenuSortRequest;
 use eDoctor\Meeting\Models\Menu\MenuUpdateRequest;
 
-require_once 'Base.php';
+require_once __DIR__ . '/Base.php';
 
 class MenuTest extends Base
 {
